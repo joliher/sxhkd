@@ -1,0 +1,58 @@
+# Abrir la kitty
+super + Return
+	/usr/bin/kitty
+
+# Abrir firefox
+super + f
+	firefox & >/dev/null 2>&1
+
+# program launcher
+# super + @space
+#	dmenu_run
+
+# Recargar ficheros de configuración de sxhkd
+# Va como quiere
+super + Escape
+	pkill -USR1 -x sxhkd
+
+#
+# Accesos rápidos sobre bspwm 
+#
+
+# Salir de bspwm
+super + shift + q
+    bspc quit
+
+# Reiniciar bspwm
+# Va como quiere
+super + shift + r
+    bspc wm -r
+
+# Cerrar y matar un proceso
+alt + F4
+	bspc node -{c,k}
+
+#
+# focus/swap
+#
+
+# Cambiar de ventana
+super + shift + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+# Cambiar de escritorio
+super + shift + {1-5} #,0}
+    bspc desktop -f ^{1,2,3,4,5} #,6,7,8,9,10}
+
+#
+# Preselectores
+#
+
+# Preseleccionar una dirección
+ctrl + shift + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# Cancelar la preselección
+ctrl + shift + space
+	bspc node -p cancel
+
